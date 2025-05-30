@@ -11,7 +11,7 @@ trainer_cfg:
   seed: 0
 
 loader_cfg:
-  data_path: "/kaggle/working/dna_sequences.pt" # this should be the torch pt file path containing the one-hot encoded DNA sequences
+  data_path: "/kaggle/input/pre-trained-vae/dna_sequences.pt" # this should be the torch pt file path containing the one-hot encoded DNA sequences
   batch_size: 256
   num_workers: 10
   num_processes: 2
@@ -28,4 +28,4 @@ model_cfg:
   block_out_channels: [256, 256, 512, 512]
   down_block_types: ["DownBlock2D", "DownBlock2D", "AttnDownBlock2D", "DownBlock2D", ]
   up_block_types: ["UpBlock2D", "AttnUpBlock2D", "UpBlock2D", "UpBlock2D", ]
-  vae_path: "/kaggle/working/2025-05-30_20-49-18baseline_best_model.pth"  # this should be the path to the trained VAE model
+  vae_path: "/kaggle/input/pre-trained-vae/2025-05-30_20-49-18baseline_best_model.pth"  # this should be the path to the trained VAE model
