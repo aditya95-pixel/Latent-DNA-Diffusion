@@ -158,7 +158,7 @@ def train_loop(config):
                 if epoch == 600:
                     exit()
                 with torch.no_grad():
-                    batch_size = 500
+                    batch_size = 64
                     total_samples = 2000
                     pipe = DDPMDNAPipeline(unet = model.module, scheduler = noise_scheduler)
                     pipe = pipe.to(config.device)
