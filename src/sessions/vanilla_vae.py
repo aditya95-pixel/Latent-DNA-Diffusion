@@ -57,7 +57,7 @@ def train(config, cpt_name="", cpt_numer=0):
         for batch_idx, data in enumerate(train_data_loader):
             # data = data.to(accelerator.device)
             recon_batch, dist = model(data)
-            loss,_,_ = model.module.loss_function(recon_batch, data, dist, kld_weight=kld_weight)
+            loss, _, _ = model.loss_function(recon_batch, data, dist, kld_weight=kld_weight)
 
             accelerator.backward(loss.mean())
             optimizer.step()
@@ -89,7 +89,7 @@ def train(config, cpt_name="", cpt_numer=0):
             for batch_idx, data in enumerate(val_data_loader):
                 # data = data.to(accelerator.device)
                 recon_batch, dist = model(data)
-                v_loss,rec_loss,kl_loss = model.module.loss_function(recon_batch, data, dist, kld_weight=kld_weight)
+                v_loss,rec_loss,kl_loss = model.loss_function(recon_batch, data, dist, kld_weight=kld_weight)
                 loss_li.append(v_loss.mean().item())
                 ###
                 rec_li.append(rec_loss.mean().item())
