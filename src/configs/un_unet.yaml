@@ -28,4 +28,4 @@ model_cfg:
   block_out_channels: [256, 256, 512, 512]
   down_block_types: ["DownBlock2D", "DownBlock2D", "AttnDownBlock2D", "DownBlock2D", ]
   up_block_types: ["UpBlock2D", "AttnUpBlock2D", "UpBlock2D", "UpBlock2D", ]
-  # vae_path: ""  # this should be the path to the trained VAE model
+  vae_path: "/kaggle/working/2025-05-30_20-49-18baseline_best_model.pth"  # this should be the path to the trained VAE model
