@@ -123,6 +123,6 @@ def train(config, cpt_name="", cpt_numer=0):
                 torch.save(model.state_dict(), os.path.join(config.save_path, TIME+"baseline_best_model.pth"))
     print(">>> Training finished. Best epoch:", best_epoch)
     print(f"Best Validation Acc {best_val_acc}")
-    torch.save(model.module.state_dict(), os.path.join(config.save_path, TIME+"baseline_checkpoint.pth"))
+    torch.save(model.state_dict(), os.path.join(config.save_path, TIME+"baseline_checkpoint.pth"))
     accelerator.wait_for_everyone()
     accelerator.end_training()
