@@ -3,7 +3,7 @@ trainer_cfg:
   learning_rate: 0.0001
 
 loader_cfg:
-  data_path: "" # this should be the torch pt file path containing the one-hot encoded DNA sequences
+  data_path: "/kaggle/working/dna_sequences.pt" # this should be the torch pt file path containing the one-hot encoded DNA sequences
   batch_size: 64
   num_workers: 5
   num_processes: 4
