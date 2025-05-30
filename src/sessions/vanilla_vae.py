@@ -120,7 +120,7 @@ def train(config, cpt_name="", cpt_numer=0):
             if val_acc > best_val_acc:
                 best_val_acc = val_acc
                 best_epoch = epoch
-                torch.save(model.module.state_dict(), os.path.join(config.save_path, TIME+"baseline_best_model.pth"))
+                torch.save(model.state_dict(), os.path.join(config.save_path, TIME+"baseline_best_model.pth"))
     print(">>> Training finished. Best epoch:", best_epoch)
     print(f"Best Validation Acc {best_val_acc}")
     torch.save(model.module.state_dict(), os.path.join(config.save_path, TIME+"baseline_checkpoint.pth"))
